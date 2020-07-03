@@ -2,6 +2,8 @@ package com.li.service.impl;
 
 import com.li.controller.TestController;
 import com.li.dao.TestMapper;
+import com.li.exception.SQLErrorException;
+import com.li.service.TestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -19,10 +21,10 @@ public class TestServiceImpl implements TestService {
     private TestMapper testDao;
 
     @Override
-    public int test() {
+    public int test() throws SQLErrorException {
         int a = testDao.test();
         System.out.println(a);
         logger.info("test-------------");
-        return a;
+        throw new SQLErrorException("SQL异常");
     }
 }
