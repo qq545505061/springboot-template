@@ -1,5 +1,6 @@
 package com.zs;
 
+import com.li.ZsApplication;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -9,7 +10,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@SpringBootTest
+@SpringBootTest(classes = ZsApplication.class)
 @RunWith(SpringRunner.class)
 class ZsApplicationTests {
 
@@ -25,7 +26,7 @@ class ZsApplicationTests {
     @Test
     void redisTest() {
         stringRedisTemplate.opsForValue().set("name", "gime");
-        Assert.assertEquals("jime", stringRedisTemplate.opsForValue().get("name"));
+        Assert.assertEquals("gime", stringRedisTemplate.opsForValue().get("name"));
     }
 
 }

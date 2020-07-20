@@ -4,4 +4,13 @@
     <select id="test" resultType="int">
         SELECT refId FROM account WHERE id = 17
     </select>
+    
+    <select id="selectUserById" resultType="com.li.entity.User">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <select id="selectOrderByState" resultType="com.li.entity.Order">
+        SELECT * FROM bankloan_order
+        WHERE state = #{state}
+    </select>
 </mapper>
