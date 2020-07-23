@@ -8,7 +8,6 @@ import com.li.exception.SQLErrorException;
 import com.li.service.TestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,8 +30,9 @@ public class TestController {
     }
 
     @RequestMapping("getUserById")
-    public void getUserById(Integer id) {
+    public User getUserById(Integer id) {
         User user = testService.getUserById(id);
+        return user;
     }
 
     @RequestMapping("getOrderByState")
