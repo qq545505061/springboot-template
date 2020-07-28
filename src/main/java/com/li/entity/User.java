@@ -1,6 +1,7 @@
 package com.li.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class User implements Serializable {
 
@@ -11,6 +12,7 @@ public class User implements Serializable {
     private Integer age;
     private String nickName;
     private String phone;
+    private Date createTime;
 
     public Integer getId() {
         return id;
@@ -66,5 +68,13 @@ public class User implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

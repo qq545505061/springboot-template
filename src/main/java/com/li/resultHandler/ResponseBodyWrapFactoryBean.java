@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * 设置过滤bean原则
+ * InitializingBean接口为bean提供了初始化方法的方式，它只包括afterPropertiesSet方法，凡是继承该接口的类，在初始化bean的时候都会执行该方法
  */
 public class ResponseBodyWrapFactoryBean implements InitializingBean {
 
@@ -28,7 +29,6 @@ public class ResponseBodyWrapFactoryBean implements InitializingBean {
 
     /**
      * 处理指定handler
-     * @param handlers
      */
     public void decorateHandler(List<HandlerMethodReturnValueHandler> handlers) {
         for(HandlerMethodReturnValueHandler handler : handlers) {

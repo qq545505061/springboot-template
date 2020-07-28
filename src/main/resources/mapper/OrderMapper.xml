@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.li.dao.OrderMapper">
+
+    <!-- 分页获取订单 -->
+    <select id="selectOrdersByPage" resultType="com.li.entity.Order">
+        SELECT * FROM `order`
+        LIMIT #{startRow}, #{pageSize}
+    </select>
+
+    <!-- 获取订单总数 -->
+    <select id="selectOrderCount" resultType="int">
+        SELECT COUNT(*) FROM `order`
+    </select>
+</mapper>

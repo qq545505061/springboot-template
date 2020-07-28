@@ -32,6 +32,7 @@ public class TestController {
     @RequestMapping("getUserById")
     public User getUserById(Integer id) {
         User user = testService.getUserById(id);
+        System.out.println("user:" + user);
         return user;
     }
 
