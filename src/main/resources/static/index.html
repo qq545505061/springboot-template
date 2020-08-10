@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>fefef</h1>
-</body>
+<html>
+  <head>
+    <title>index.html</title>
+
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta charset=UTF-8>
+
+
+
+  </head>
+
+  <body>
+    <div id="app">
+		<router-view></router-view>
+    </div>
+  </body>
 </html>
+
+<script src="/core/import.js"></script>
+<script src="/core/main.js"></script>
+
+<script type="text/javascript">
+	var vm = new Vue({
+		el: '#app',
+		data: {},
+		router,
+        store
+	})
+</script>
+
+<style>
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  #app {
+    height: inherit;
+  }
+</style>
